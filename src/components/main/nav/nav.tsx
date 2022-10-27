@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./nav.scss";
 
-export const Nav = () => {
+export interface NavProps {
+    color: string;
+}
+
+export const Nav = ({color} : NavProps) => {
     return (
-        <nav className="nav">
+        <nav className="nav" style={{backgroundColor: color} }>
             <div className="navitem">
                 <span className="navText">About</span>
             </div>

@@ -1,11 +1,56 @@
 .landing-image-wrapper {
+    margin-top: -15%;
     width: 100vw;
     display: flex;
+    position: relative;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out 100ms;
+    &:hover{
+        opacity: 80%;
+    }
+
+    .landing-text-wrapper{
+        height: 100vh;
+        width: 100vw;
+        left: 20%;
+        top: 10%;
+        position: absolute;
+        font-size: 10vw;
+        color: wheat;
+        transform: translateY(15%);
+        
+    }
+
+    .landing-text{
+        transition: color 0.1s ease-in-out 100ms;
+        transition: font-size 0.1s ease-in-out 100ms;
+        pointer-events: auto;
+        display: inline-block;
+        &:hover{
+            mix-blend-mode: luminosity;
+            font-size: 20vw;
+            cursor: pointer;
+
+            --b: 5px;   /* thickness of the border */
+            --c: #E33B78;   /* color of the border */
+            --w: 20px;  /* width of border */
+            
+          
+            border: var(--b) solid #0000; /* space for the border */
+            --_g: #0000 90deg,var(--c) 0;
+            --_p: var(--w) var(--w) border-box no-repeat;
+            background:
+              conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+              conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+              conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+              conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+        }
+    }
 
     .landing-image {
-        max-width: 100%;
-        position: fixed;
+        max-width: 120%;
         display: block;
+        object-fit: fill;
         overflow: hidden;
     }
 }

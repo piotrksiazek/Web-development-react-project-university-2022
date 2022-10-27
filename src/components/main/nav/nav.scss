@@ -2,9 +2,10 @@ nav {
     display: flex;
     height: 3rem;
     width: 100%;
-    background-color: #FF4858;
+    background-color: #E33B78;
     font-weight: bold;
     color: white;
+    transition: background-color 0.3s ease-out 100ms;
 
     .navitem {
         transition: background-color 0.3s ease-out 100ms;

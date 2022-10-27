@@ -1,23 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
-  Routes,
-  Route,
-  BrowserRouter
-} from "react-router-dom";
-import { Landing } from './components/landing/landing';
-import { Nav } from './components/main/nav/nav';
-import { Main } from './components/main/main';
+  BrowserRouter} from "react-router-dom";
+import { AnimatePresence } from 'framer-motion';
+import { AnimatedRoutes } from './components/routes/routes';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <Landing/> } />
-        <Route path="/portfolio" element={<Main/>}/>
-      </Routes>
-    </BrowserRouter>
+    <AnimatePresence>
+      <BrowserRouter>
+        <AnimatedRoutes/>
+      </BrowserRouter>
+    </AnimatePresence>
   );
 }
 
