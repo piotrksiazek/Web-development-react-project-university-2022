@@ -13,11 +13,11 @@ export const Main = () => {
         exit={{opacity: "0%"}}>
         <Nav color={color}/>
         <div style={{display: "flex", flexDirection: "column"}}>
-            <div onMouseOver={() => setColor("blue")} onMouseLeave={() => setColor("red")} style={{backgroundColor: "red", height: "90vh"}}>
+            <div onMouseOver={() => setColor("blue")} onMouseLeave={() => setColor("red")} style={{backgroundColor: "white", height: "90vh"}}>
                 <ProjectMiniature primaryImage={"prince.jpg"} hoverImage={"golden.jpg"} title={"golden"}/>
             </div>
             <div style={{backgroundColor: "green", height: "90vh"}}>
-
+                <ProjectMiniature primaryImage={"prince.jpg"} hoverImage={"golden.jpg"} title={"golden"}/>
             </div>
             <div  style={{backgroundColor: "blue", height: "90vh"}}>
 

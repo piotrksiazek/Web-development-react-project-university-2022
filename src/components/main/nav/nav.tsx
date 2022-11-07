@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./nav.scss";
 
 export interface NavProps {
@@ -6,14 +6,30 @@ export interface NavProps {
 }
 
 export const Nav = ({color} : NavProps) => {
+
+    const navRef = useRef<HTMLDivElement>(null);
+
+	const showNavbar = () => {
+        const node = navRef.current;
+	    node?.classList.toggle("responsive_nav");
+	};
     return (
-        <nav className="nav" style={{backgroundColor: color} }>
-            <div className="navitem">
-                <span className="navText">About</span>
-            </div>
-            <div className="navitem">
-                <span className="navText">Contact</span>
-            </div>
-        </nav>
+        <header>
+			<h3>LOGO</h3>
+			<nav ref={navRef}>
+				<a href="/#">Home</a>
+				<a href="/#">My work</a>
+				<a href="/#">Blog</a>
+				<a href="/#">About me</a>
+				<button
+					className="nav-btn nav-close-btn"
+					onClick={showNavbar}>
+                        |||
+				</button>
+			</nav>
+			<button className="nav-btn" onClick={showNavbar}>
+                |||
+			</button>
+		</header>
     )
 }
