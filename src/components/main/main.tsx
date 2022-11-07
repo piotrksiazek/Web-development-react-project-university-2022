@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Nav } from "./nav/nav";
+import { ProjectMiniature } from "./project/project-miniature";
 
 export const Main = () => {
     const baseColor = "#E33B78";
@@ -13,7 +14,7 @@ export const Main = () => {
         <Nav color={color}/>
         <div style={{display: "flex", flexDirection: "column"}}>
             <div onMouseOver={() => setColor("blue")} onMouseLeave={() => setColor("red")} style={{backgroundColor: "red", height: "90vh"}}>
-                
+                <ProjectMiniature primaryImage={"prince.jpg"} hoverImage={"golden.jpg"} title={"golden"}/>
             </div>
             <div style={{backgroundColor: "green", height: "90vh"}}>
 

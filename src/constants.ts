@@ -1,0 +1,1 @@
+export const cdnBaseUrl = "https://piotr-ksiazek-portfolio-cdn.herokuapp.com/images/";
