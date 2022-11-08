@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { cdnBaseUrl } from '../../../constants';
 import "./project-miniature.scss";
 
@@ -11,41 +10,33 @@ const Primary = ({img} : PrimaryProps) => {
     return <img className='img-primary' src={cdnBaseUrl + img}/>
 }
 
-interface SecondaryProps {
-    img: string;
-    title: string;
-}
-
-const Secondary = ({img, title} : SecondaryProps) => {
-    return (
-        <div className='secondary-wrapper'>
-            <img className='img-secondary' src={cdnBaseUrl + img}/>
-            <div className='text'>{title}</div>
-            <div className='bg'></div>
-        </div>
-    )
-}
-
 
 export interface ProjectMiniatureProps{
+    index: number;
     primaryImage: string;
-    hoverImage: string;
-    title: string;
+    activeIndex: number;
+    setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const ProjectMiniature = ({primaryImage, hoverImage, title} : ProjectMiniatureProps) => {
-    const [isHover, setIsHover] = useState(false);
-    const [isTouch, setIsTouch] = useState(false)
+export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex} : ProjectMiniatureProps) => {
+    const [style, setStyle] = useState("50%")
+    
+    const handleClick = () => {
+        if(activeIndex === index){
+            setStyle("50%");
+            setActiveIndex(-1);
+        } else if(activeIndex < 0){
+            setActiveIndex(index);
+            setStyle("90%");
+        }
+    }
 
     return (
-        <div  className='miniature-image-container'
-            onMouseOver={() => setIsHover(true)}
-            onMouseLeave={() => setIsHover(false)}>
-                {(!isHover) ? 
-                        <Primary img={primaryImage}/>
-                            : 
-                        <Secondary img={hoverImage} title={title}/>
-                    }
+        <div className={'miniature-image-container'}
+            style={{width: style, height: style}}
+            onClick={() => {handleClick()}}>
+                <Primary img={primaryImage}/>
         </div>
     );
+    
 }

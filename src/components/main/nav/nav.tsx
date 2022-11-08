@@ -1,11 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./nav.scss";
 
-export interface NavProps {
-    color: string;
-}
-
-export const Nav = ({color} : NavProps) => {
+export const Nav = () => {
 
     const navRef = useRef<HTMLDivElement>(null);
 
@@ -15,7 +11,7 @@ export const Nav = ({color} : NavProps) => {
 	};
     return (
         <header>
-			<h3>LOGO</h3>
+			<h3>Piotr Ksiazek</h3>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
 				<a href="/#">My work</a>
