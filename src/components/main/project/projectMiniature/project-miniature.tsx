@@ -1,24 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { cdnBaseUrl } from '../../../constants';
+import { cdnBaseUrl } from '../../../../constants';
 import { ClipLoader } from 'react-spinners';
+import { Image } from '../Image/image';
 import "./project-miniature.scss";
-
-interface PrimaryProps {
-    img: string;
-    onClick: () => void;
-    opacity: string;
-}
-
-const Primary = ({img, onClick, opacity} : PrimaryProps) => {
-    return <img
-                onClick={onClick} 
-                style={{opacity: opacity}} 
-                className='img-primary' 
-                src={img}
-                alt=""
-            />
-}
-
 
 export interface ProjectMiniatureProps{
     index: number;
@@ -64,7 +48,7 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
                 style={{width: style, height: style}}
                 >
                     {activeIndex === index ? <button className='btn'>left</button> : <div/>}
-                    <Primary 
+                    <Image 
                         onClick={() => handleClick()}
                         opacity={opacity} 
                         img={img}

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Nav } from "./nav/nav";
-import { ProjectMiniature } from "./project/project-miniature";
+import { ProjectMiniature } from "./project/projectMiniature/project-miniature";
 
 export const Main = () => {
     const baseColor = "#E33B78";
