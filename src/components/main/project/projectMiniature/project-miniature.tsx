@@ -4,6 +4,7 @@ import { ClipLoader } from 'react-spinners';
 import { Image } from '../Image/image';
 import  * as constants  from '../../../constants';
 import "./project-miniature.scss";
+import { NextButton } from './nextButton/next-button';
 
 export interface ProjectMiniatureProps{
     index: number;
@@ -49,13 +50,13 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
             <div className={'miniature-image-container'}
                 style={{width: style, height: style}}
                 >
-                    {activeIndex === index ? <button className='btn'>left</button> : <div/>}
+                    {activeIndex === index ? <NextButton content='previous'/> : <div/>}
                     <Image 
                         onClick={() => handleClick()}
                         opacity={activeIndex === index? constants.fullOpacity : opacityForAllImages} 
                         img={img}
                         />
-                    {activeIndex === index ? <button className='btn'>right</button> : <div/>}
+                    {activeIndex === index ? <NextButton content='next'/> : <div/>}
             </div>
         );
     } else {
