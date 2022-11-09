@@ -15,18 +15,18 @@ export interface ProjectMiniatureProps{
 }
 
 export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex, opacityForAllImages, setOpacityForAllImages} : ProjectMiniatureProps) => {
-    const [style, setStyle] = useState("50%")
+    const [style, setStyle] = useState(constants.lowSize)
     const [isImgLoaded, setIsImgLoaded] = useState(false);
     const [img, setImg] = useState("");
     
     const handleClick = () => {
         if(activeIndex === index){
-            setStyle("50%");
+            setStyle(constants.lowSize);
             setActiveIndex(-1);
             setOpacityForAllImages(constants.fullOpacity);
         } else if(activeIndex < 0){
             setActiveIndex(index);
-            setStyle("90%");
+            setStyle(constants.fullSize);
             setOpacityForAllImages(constants.lowOpacity);
         }
     }
