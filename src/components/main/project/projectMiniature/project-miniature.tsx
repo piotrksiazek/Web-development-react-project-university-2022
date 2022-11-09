@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { cdnBaseUrl } from '../../../../constants';
 import { ClipLoader } from 'react-spinners';
 import { Image } from '../Image/image';
+import  * as constants  from '../../../constants';
 import "./project-miniature.scss";
 
 export interface ProjectMiniatureProps{
@@ -9,23 +10,24 @@ export interface ProjectMiniatureProps{
     primaryImage: string;
     activeIndex: number;
     setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+    opacityForAllImages: string;
+    setOpacityForAllImages: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex} : ProjectMiniatureProps) => {
+export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex, opacityForAllImages, setOpacityForAllImages} : ProjectMiniatureProps) => {
     const [style, setStyle] = useState("50%")
     const [isImgLoaded, setIsImgLoaded] = useState(false);
-    const [opacity, setOpacity] = useState("100%");
     const [img, setImg] = useState("");
     
     const handleClick = () => {
         if(activeIndex === index){
             setStyle("50%");
             setActiveIndex(-1);
-            setOpacity("30%");
+            setOpacityForAllImages(constants.fullOpacity);
         } else if(activeIndex < 0){
             setActiveIndex(index);
             setStyle("90%");
-            setOpacity("100%");
+            setOpacityForAllImages(constants.lowOpacity);
         }
     }
 
@@ -50,7 +52,7 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
                     {activeIndex === index ? <button className='btn'>left</button> : <div/>}
                     <Image 
                         onClick={() => handleClick()}
-                        opacity={opacity} 
+                        opacity={activeIndex === index? constants.fullOpacity : opacityForAllImages} 
                         img={img}
                         />
                     {activeIndex === index ? <button className='btn'>right</button> : <div/>}
