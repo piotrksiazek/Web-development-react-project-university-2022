@@ -5,9 +5,9 @@
 
 .miniature-image-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: stretch;
     width: 50%;
     height: 50%;
     margin: auto;
@@ -28,4 +28,17 @@
             transform: translate(-50%, -50%);
         }
 
+        .btn {
+            transition: all 0.5s;
+        }
+
+}
+
+.loader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 5% 0 5% 0;
+    margin: auto;
 }
