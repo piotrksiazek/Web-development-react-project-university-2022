@@ -28,7 +28,7 @@ export const Nav = ({toggleZIndex} : NavProps) => {
 			<h3>Piotr Ksiazek</h3>
 			<nav ref={navRef}>
 				<a href="/#" onClick={(event) => handleNavigate("/", event)}>Home</a>
-				<a href="/#">My work</a>
+				<a href="/#" onClick={(event) => handleNavigate("/portfolio", event)}>My work</a>
 				<a href="/#">Blog</a>
 				<a href="/#" onClick={(event) => handleNavigate("/about", event)}>About me</a>
 				<button
