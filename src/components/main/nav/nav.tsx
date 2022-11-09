@@ -1,13 +1,18 @@
 import React, { useRef } from "react";
 import "./nav.scss";
 
-export const Nav = () => {
+export interface NavProps {
+	toggleZIndex: () => void;
+}
+
+export const Nav = ({toggleZIndex} : NavProps) => {
 
     const navRef = useRef<HTMLDivElement>(null);
 
 	const showNavbar = () => {
         const node = navRef.current;
 	    node?.classList.toggle("responsive_nav");
+		toggleZIndex();
 	};
     return (
         <header>

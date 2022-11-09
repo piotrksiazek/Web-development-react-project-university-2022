@@ -8,24 +8,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    width: 50%;
+    // width: 50%;
     height: 50%;
     margin: auto;
     transition: all 1s ease-in-out;
-
+        
         .img-primary {
             min-width: 100%;
-        }
-
-        .bg {
-            z-index: 0;
-            background-color: rgba($color: white, $alpha: 0);
-            position: absolute;
-            min-width: 100%;
-            min-height: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .btn {

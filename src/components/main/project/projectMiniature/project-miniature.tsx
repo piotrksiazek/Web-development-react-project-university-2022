@@ -14,9 +14,10 @@ export interface ProjectMiniatureProps{
     opacityForAllImages: string;
     setOpacityForAllImages: React.Dispatch<React.SetStateAction<string>>;
     otherImages: Array<string>;
+    zIndex: string;
 }
 
-export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex, opacityForAllImages, setOpacityForAllImages, otherImages} : ProjectMiniatureProps) => {
+export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex, opacityForAllImages, setOpacityForAllImages, otherImages, zIndex} : ProjectMiniatureProps) => {
     const [style, setStyle] = useState(constants.lowSizePercent)
     const [isImgLoaded, setIsImgLoaded] = useState(false);
     const [img, setImg] = useState("");
@@ -50,7 +51,6 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
         if(currentOtherImageIndex < otherImages.length - 1){
             setCurrentOtherImageIndex(currentOtherImageIndex + 1);
         }
-        console.log(currentOtherImageIndex);
     }
 
     const previousImage = async () => {
@@ -65,8 +65,6 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
         if(currentOtherImageIndex > 0){
             setCurrentOtherImageIndex(currentOtherImageIndex - 1);
         }
-        console.log(currentOtherImageIndex);
-        console.log(otherImages.length)
     }
 
     useEffect(() => {
@@ -89,12 +87,14 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
                 style={{width: style, height: style}}
                 >
                     {activeIndex === index ? <NextButton content='previous' onClick={previousImage}/> : <div/>}
-                    <Image 
-                        onClick={() => handleClick()}
-                        opacity={activeIndex === index? constants.fullOpacity : opacityForAllImages} 
-                        img={img}
-                        />
+                        <Image 
+                            onClick={() => handleClick()}
+                            opacity={activeIndex === index? constants.fullOpacity : opacityForAllImages} 
+                            img={img}
+                            zIndex={zIndex}
+                            />
                     {activeIndex === index ? <NextButton content='next' onClick={nextImage}/> : <div/>}
+                    
             </div>
         );
     } else {
