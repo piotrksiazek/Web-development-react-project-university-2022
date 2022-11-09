@@ -19,6 +19,7 @@ export const Nav = ({toggleZIndex} : NavProps) => {
 
 	const handleNavigate = (path: string, event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 		event.preventDefault();
+		showNavbar();
 		navigate(path);
 	}
 
@@ -29,7 +30,7 @@ export const Nav = ({toggleZIndex} : NavProps) => {
 				<a href="/#" onClick={(event) => handleNavigate("/", event)}>Home</a>
 				<a href="/#">My work</a>
 				<a href="/#">Blog</a>
-				<a href="/#">About me</a>
+				<a href="/#" onClick={(event) => handleNavigate("/about", event)}>About me</a>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>

@@ -4,26 +4,19 @@ import { Nav } from "./nav/nav";
 import { ProjectMiniature } from "./project/projectMiniature/project-miniature";
 import "./main.scss";
 
-export const Main = () => {
+export interface MainProps {
+    imgZIndex: string;
+}
+
+export const Main = ({imgZIndex} : MainProps) => {
     const [activeMiniature, setActiveMiniature] = useState<number>(-1);
     const [opacityForAllImages, setOpacityForAllImages] = useState("100%");
-    const [imgZIndex, setImgZIndex] = useState("0");
-
-    const toggleImgZIndex = () => {
-        if(imgZIndex === "-1"){
-            setImgZIndex("0");
-        } else {
-            setImgZIndex("-1");
-        }
-    }
 
     return (
     <motion.div 
         initial={{opacity: "0%"}}
         animate={{opacity: "100%"}}
         exit={{opacity: "0%"}}>
-        <Nav toggleZIndex={toggleImgZIndex}/>
-
             <div style={{display: "flex", flexDirection: "column"}}>
                     <ProjectMiniature 
                         index={1} 
