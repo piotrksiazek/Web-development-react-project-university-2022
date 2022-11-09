@@ -1,25 +1,32 @@
-.abs {
-    position: absolute;
-    display: none;
-}
-
 .miniature-image-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: stretch;
-    // width: 50%;
     height: 50%;
     margin: auto;
     transition: all 1s ease-in-out;
+    padding: 3% 0 3% 0;
         
         .img-primary {
             min-width: 100%;
         }
 
         .btn {
-            transition: all 0.5s;
+            background-color: #29335c;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
         }
+
+    h2 {
+        margin: auto;
+        font-size: 50px;
+    }
 
 }
 

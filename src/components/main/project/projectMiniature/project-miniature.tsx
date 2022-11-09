@@ -15,9 +15,10 @@ export interface ProjectMiniatureProps{
     setOpacityForAllImages: React.Dispatch<React.SetStateAction<string>>;
     otherImages: Array<string>;
     zIndex: string;
+    title: string;
 }
 
-export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex, opacityForAllImages, setOpacityForAllImages, otherImages, zIndex} : ProjectMiniatureProps) => {
+export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex, opacityForAllImages, setOpacityForAllImages, otherImages, zIndex, title} : ProjectMiniatureProps) => {
     const [style, setStyle] = useState(constants.lowSizePercent)
     const [isImgLoaded, setIsImgLoaded] = useState(false);
     const [img, setImg] = useState("");
@@ -94,6 +95,7 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
                             zIndex={zIndex}
                             />
                     {activeIndex === index ? <NextButton content='next' onClick={nextImage}/> : <div/>}
+                    {activeIndex === index ? <h2>{title}</h2> : <div/>}
                     
             </div>
         );

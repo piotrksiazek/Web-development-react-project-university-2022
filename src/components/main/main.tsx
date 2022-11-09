@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Nav } from "./nav/nav";
 import { ProjectMiniature } from "./project/projectMiniature/project-miniature";
+import "./main.scss";
 
 export const Main = () => {
     const [activeMiniature, setActiveMiniature] = useState<number>(-1);
@@ -22,37 +23,41 @@ export const Main = () => {
         animate={{opacity: "100%"}}
         exit={{opacity: "0%"}}>
         <Nav toggleZIndex={toggleImgZIndex}/>
-        <div style={{display: "flex", flexDirection: "column"}}>
-                <ProjectMiniature 
-                    index={1} 
-                    primaryImage={"prince.jpg"} 
-                    activeIndex={activeMiniature} 
-                    setActiveIndex={setActiveMiniature} 
-                    opacityForAllImages={opacityForAllImages} 
-                    setOpacityForAllImages={setOpacityForAllImages}
-                    otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
-                    zIndex={imgZIndex}
-                    />
-                <ProjectMiniature 
-                    index={2} 
-                    primaryImage={"prince.jpg"} 
-                    activeIndex={activeMiniature} 
-                    setActiveIndex={setActiveMiniature} 
-                    opacityForAllImages={opacityForAllImages} 
-                    setOpacityForAllImages={setOpacityForAllImages}
-                    otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
-                    zIndex={imgZIndex}
-                    />
-                <ProjectMiniature 
-                    index={3} 
-                    primaryImage={"prince.jpg"} 
-                    activeIndex={activeMiniature} 
-                    setActiveIndex={setActiveMiniature} 
-                    opacityForAllImages={opacityForAllImages} 
-                    setOpacityForAllImages={setOpacityForAllImages}
-                    otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
-                    zIndex={imgZIndex}
-                    />
-        </div>
+
+            <div style={{display: "flex", flexDirection: "column"}}>
+                    <ProjectMiniature 
+                        index={1} 
+                        primaryImage={"prince.jpg"} 
+                        activeIndex={activeMiniature} 
+                        setActiveIndex={setActiveMiniature} 
+                        opacityForAllImages={opacityForAllImages} 
+                        setOpacityForAllImages={setOpacityForAllImages}
+                        otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
+                        zIndex={imgZIndex}
+                        title={"project 1"}
+                        />
+                    <ProjectMiniature 
+                        index={2} 
+                        primaryImage={"prince.jpg"} 
+                        activeIndex={activeMiniature} 
+                        setActiveIndex={setActiveMiniature} 
+                        opacityForAllImages={opacityForAllImages} 
+                        setOpacityForAllImages={setOpacityForAllImages}
+                        otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
+                        zIndex={imgZIndex}
+                        title={"project 2"}
+                        />
+                    <ProjectMiniature 
+                        index={3} 
+                        primaryImage={"prince.jpg"} 
+                        activeIndex={activeMiniature} 
+                        setActiveIndex={setActiveMiniature} 
+                        opacityForAllImages={opacityForAllImages} 
+                        setOpacityForAllImages={setOpacityForAllImages}
+                        otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
+                        zIndex={imgZIndex}
+                        title={"project 3"}
+                        />
+            </div>
     </motion.div>)
 }

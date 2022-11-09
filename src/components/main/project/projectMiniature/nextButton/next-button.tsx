@@ -1,4 +1,5 @@
 import React from "react";
+import {FaArrowLeft, FaArrowRight} from 'react-icons/fa';
 import "../project-miniature.scss"
 
 export interface NextButtonProps {
@@ -7,5 +8,5 @@ export interface NextButtonProps {
 }
 
 export const NextButton = ({content, onClick} : NextButtonProps) => {
-    return <button className='btn' onClick={onClick}>{content}</button>
+    return <button className='btn' onClick={onClick}>{content === 'next' ? <FaArrowRight/> : <FaArrowLeft/>}</button>
 }

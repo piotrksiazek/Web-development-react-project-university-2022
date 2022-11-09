@@ -8,6 +8,7 @@ export const AnimatedRoutes = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={ <Landing/> } />
           <Route path="/portfolio" element={<Main/>}/>
+          <Route path="/about" element={<div>About</div>}/>
         </Routes>
     );
 }
