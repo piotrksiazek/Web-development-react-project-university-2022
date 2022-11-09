@@ -14,11 +14,19 @@ export const Main = () => {
         exit={{opacity: "0%"}}>
         <Nav/>
         <div style={{display: "flex", flexDirection: "column"}}>
-                <ProjectMiniature index={1} primaryImage={"prince.jpg"} activeIndex={activeMiniature} setActiveIndex={setActiveMiniature} opacityForAllImages={opacityForAllImages} setOpacityForAllImages={setOpacityForAllImages}/>
-                <ProjectMiniature index={2} primaryImage={"golden.jpg"} activeIndex={activeMiniature} setActiveIndex={setActiveMiniature} opacityForAllImages={opacityForAllImages} setOpacityForAllImages={setOpacityForAllImages}/>
+                <ProjectMiniature 
+                    index={1} 
+                    primaryImage={"prince.jpg"} 
+                    activeIndex={activeMiniature} 
+                    setActiveIndex={setActiveMiniature} 
+                    opacityForAllImages={opacityForAllImages} 
+                    setOpacityForAllImages={setOpacityForAllImages}
+                    otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
+                    />
+                {/* <ProjectMiniature index={2} primaryImage={"golden.jpg"} activeIndex={activeMiniature} setActiveIndex={setActiveMiniature} opacityForAllImages={opacityForAllImages} setOpacityForAllImages={setOpacityForAllImages}/>
                 <ProjectMiniature index={3} primaryImage={"prince.jpg"} activeIndex={activeMiniature} setActiveIndex={setActiveMiniature} opacityForAllImages={opacityForAllImages} setOpacityForAllImages={setOpacityForAllImages}/>
                 <ProjectMiniature index={4} primaryImage={"golden.jpg"} activeIndex={activeMiniature} setActiveIndex={setActiveMiniature} opacityForAllImages={opacityForAllImages} setOpacityForAllImages={setOpacityForAllImages}/>
-                <ProjectMiniature index={5} primaryImage={"prince.jpg"} activeIndex={activeMiniature} setActiveIndex={setActiveMiniature} opacityForAllImages={opacityForAllImages} setOpacityForAllImages={setOpacityForAllImages}/>
+                <ProjectMiniature index={5} primaryImage={"prince.jpg"} activeIndex={activeMiniature} setActiveIndex={setActiveMiniature} opacityForAllImages={opacityForAllImages} setOpacityForAllImages={setOpacityForAllImages}/> */}
         </div>
     </motion.div>)
 }
