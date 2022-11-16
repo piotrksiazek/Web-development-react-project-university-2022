@@ -1,0 +1,45 @@
+:root {
+    --mobile-width: 80vw;
+    --desktop-width: 30vw;
+}
+
+.about-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+
+    @media only screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
+
+    img {
+        margin: auto;
+        width: var(--desktop-width);
+
+        @media only screen and (max-width: 1024px) {
+            width: var(--mobile-width);
+        }
+    }
+
+    .about-text {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        padding: 0 5% 5% 5%;
+
+        h2 {
+            margin: auto;
+        }
+
+        div {
+            margin-top: 2%;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            width: var(--mobile-width);
+            margin-top: 5%;
+            padding: 0;
+        }
+    }
+}
