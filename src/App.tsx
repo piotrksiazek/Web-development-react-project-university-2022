@@ -1,12 +1,13 @@
 import {
-  BrowserRouter} from "react-router-dom";
+  BrowserRouter, useLocation} from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
 import { AnimatedRoutes } from './components/routes/routes';
 import { Nav } from "./components/main/nav/nav";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [imgZIndex, setImgZIndex] = useState("0");
+
   const toggleImgZIndex = () => {
     if(imgZIndex === "-1"){
         setImgZIndex("0");
