@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Nav } from "./nav/nav";
 import { ProjectMiniature } from "./project/projectMiniature/project-miniature";
 import "./main.scss";
 

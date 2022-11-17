@@ -3,7 +3,7 @@ import "./about.scss";
 export const About = () => {
     return (
         <div className='about-wrapper'>
-            <img src="https://piotr-ksiazek-portfolio-cdn.herokuapp.com/images/bnw/1.jpg" alt="aboutimg"></img>
+            <img src="https://piotr-ksiazek-portfolio-cdn.herokuapp.com/images/bnw/1.jpg"></img>
             <div className='about-text'>
                 <h2>PIOTR KSIAZEK</h2>
                 <div>

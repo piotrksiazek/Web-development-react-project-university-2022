@@ -42,15 +42,14 @@ export const Landing = () => {
           window.removeEventListener('mousemove', updateMousePosition);
           window.removeEventListener('resize', handleResize);
         };
-      }, [windowDimensions]);
-
+      }, []);
     if(isDesktopOrLaptop){
         return (
           <div
             className="landing-image-wrapper" 
             onClick={() => navigate("portfolio")}>
               <div style={{transform: `translate(0, -20%)`}}>
-                <img className="landing-image" style={{transform: `translate(${-mousePosition.x/20}px, ${-mousePosition.y/20}px) scale(1.1)` }} src={require("../../Images/welcome.jpg")}  alt="homepageimg"></img>
+                <img className="landing-image" style={{transform: `translate(${-mousePosition.x/20}px, ${-mousePosition.y/20}px) scale(1.1)` }} src={require("../../Images/welcome.jpg")}></img>
               </div>
               
               <LandingText wrapperClassName="landing-text-wrapper" innerClassName="landing-text"/>
@@ -62,7 +61,7 @@ export const Landing = () => {
           className='landing-image-wrapper--mobile'
           onClick={() => navigate("portfolio")}>
             <div>
-              <img className="landing-image--mobile" src={require("../../Images/welcome.jpg")} alt="homepageimg"></img>
+              <img className="landing-image--mobile" src={require("../../Images/welcome.jpg")}></img>
             </div>
           <LandingText wrapperClassName='landing-text-wrapper--mobile' innerClassName='landing-text--mobile'/>
       </div>)

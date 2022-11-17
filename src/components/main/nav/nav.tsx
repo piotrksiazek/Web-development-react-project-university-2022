@@ -14,14 +14,14 @@ export const Nav = ({toggleZIndex} : NavProps) => {
 	  const current = window.location.pathname;
 	  console.log(current);
   
-	  if (current === '/') {
+	  if (current == '/') {
 		setIsLanding(true);
 	  } else {
 		setIsLanding(false);
 	  }
   
 	  console.log(isLanding);
-	}, [location, isLanding]);
+	}, [location]);
 	
     const navRef = useRef<HTMLDivElement>(null);
 	const navigate = useNavigate();

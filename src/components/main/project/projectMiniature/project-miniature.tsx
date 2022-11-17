@@ -98,7 +98,7 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
             }
         }
         fetchImages();
-      }, [otherImages, otherImagesLoaded, primaryImage]);
+      }, []);
 
     if(isImgLoaded)
     {
