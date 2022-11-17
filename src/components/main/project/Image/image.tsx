@@ -12,5 +12,6 @@ export const Image = ({img, onClick, opacity, zIndex} : ImageProps) => {
                 className='img-primary' 
                 src={img}
                 alt=""
+                loading="lazy"
             />
 }
