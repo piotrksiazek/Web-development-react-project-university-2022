@@ -47,7 +47,6 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
     const [currentOtherImageIndex, setCurrentOtherImageIndex] = useState(0);
 
     useEffect(() => {
-        if(activeIndex === index) return;
 
         if(!isDesktopOrLaptop){
             setHeight(getPercentage(constants.lowSizePercent*2))
