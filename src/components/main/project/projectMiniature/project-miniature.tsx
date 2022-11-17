@@ -37,10 +37,27 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
         }
         return `${num}%`
     }
+
+    const getNumberFromPercentage = (num: string): number => {
+        return Number(num.slice(0, num.length-1));
+    }
     
     const [height, setHeight] = useState(getPercentage(constants.lowSizePercent));
     const [img, setImg] = useState(constants.cdnBaseUrl + primaryImage);
     const [currentOtherImageIndex, setCurrentOtherImageIndex] = useState(0);
+
+    useEffect(() => {
+        if(activeIndex === index) return;
+
+        const numberFromPercent = getNumberFromPercentage(height);
+        console.log(numberFromPercent)
+            if(numberFromPercent === constants.lowSizePercent * 2){
+                setHeight(getPercentage(numberFromPercent / 2));
+            } 
+            if(numberFromPercent === constants.lowSizePercent / 2){
+                setHeight(getPercentage(numberFromPercent * 2));
+            }
+    }, [isDesktopOrLaptop]);
     
     const handleClick = () => {
         if(activeIndex === index){
@@ -49,7 +66,7 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
             setOpacityForAllImages(constants.fullOpacity);
         } else if(activeIndex < 0){
             setActiveIndex(index);
-            setHeight(getPercentage(constants.fullSizePercent));
+            setHeight(getPercentage(constants.lowSizePercent*2));
             setOpacityForAllImages(constants.lowOpacity);
         }
     }
