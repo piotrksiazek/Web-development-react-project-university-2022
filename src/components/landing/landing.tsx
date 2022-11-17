@@ -52,11 +52,19 @@ export const Landing = () => {
                 <img className="landing-image" style={{transform: `translate(${-mousePosition.x/20}px, ${-mousePosition.y/20}px) scale(1.1)` }} src={require("../../Images/welcome.jpg")}></img>
               </div>
               
-              <LandingText/>
+              <LandingText wrapperClassName="landing-text-wrapper" innerClassName="landing-text"/>
           </div>
       )
     } else {
-      return <div className="landing-image-wrapper"><LandingText/></div>
+      return (
+        <div
+          className='landing-image-wrapper--mobile'
+          onClick={() => navigate("portfolio")}>
+            <div>
+              <img className="landing-image--mobile" src={require("../../Images/welcome.jpg")}></img>
+            </div>
+          <LandingText wrapperClassName='landing-text-wrapper--mobile' innerClassName='landing-text--mobile'/>
+      </div>)
     }
     
 }

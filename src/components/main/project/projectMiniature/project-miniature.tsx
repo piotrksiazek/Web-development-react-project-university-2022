@@ -5,6 +5,7 @@ import { Image } from '../Image/image';
 import  * as constants  from '../../../constants';
 import "./project-miniature.scss";
 import { NextButton } from './nextButton/next-button';
+import { useMediaQuery } from 'react-responsive';
 
 export interface ProjectMiniatureProps{
     index: number;
@@ -20,8 +21,17 @@ export interface ProjectMiniatureProps{
 }
 
 export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex,
-     opacityForAllImages, setOpacityForAllImages, otherImages, zIndex, title, isVertical} : ProjectMiniatureProps) => {
+    opacityForAllImages, setOpacityForAllImages, otherImages, zIndex, title, isVertical} : ProjectMiniatureProps) => {
+
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 1224px)'
+    })
+
     const getPercentage = (num: number): string => {
+        if(!isDesktopOrLaptop){
+            num = num*2;
+        }
+        
         if(isVertical){
             num = num/2;
         }

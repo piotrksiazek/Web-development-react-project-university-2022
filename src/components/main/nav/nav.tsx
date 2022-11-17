@@ -44,7 +44,6 @@ export const Nav = ({toggleZIndex} : NavProps) => {
 				<nav ref={navRef}>
 					<a href="/#" onClick={(event) => handleNavigate("/", event)}>Home</a>
 					<a href="/#" onClick={(event) => handleNavigate("/portfolio", event)}>My work</a>
-					<a href="/#">Blog</a>
 					<a href="/#" onClick={(event) => handleNavigate("/about", event)}>About me</a>
 					<button
 						className="nav-btn nav-close-btn"
