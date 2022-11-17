@@ -12,15 +12,12 @@ export const Nav = ({toggleZIndex} : NavProps) => {
   
 	useEffect(() => {
 	  const current = window.location.pathname;
-	  console.log(current);
   
 	  if (current == '/') {
 		setIsLanding(true);
 	  } else {
 		setIsLanding(false);
 	  }
-  
-	  console.log(isLanding);
 	}, [location]);
 	
     const navRef = useRef<HTMLDivElement>(null);

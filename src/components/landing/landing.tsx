@@ -34,7 +34,6 @@ export const Landing = () => {
 
         const handleResize = () => {
             setWindowDimensions(getWindowDimensions());
-            console.log(windowDimensions);
           }
         window.addEventListener('mousemove', updateMousePosition);
         window.addEventListener('resize', handleResize);
