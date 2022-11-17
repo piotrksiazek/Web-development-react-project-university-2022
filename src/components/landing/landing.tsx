@@ -26,12 +26,10 @@ export const Landing = () => {
       }
 
     useEffect(() => {
-
         setWindowDimensions(getWindowDimensions());
         const updateMousePosition = (event: MouseEvent) => {
           const position: IMousePosition = { x: event.clientX, y: event.clientY};
           setMousePosition(position);
-          
         };
 
         const handleResize = () => {
@@ -58,7 +56,7 @@ export const Landing = () => {
           </div>
       )
     } else {
-      return <div>XDDD</div>
+      return <div className="landing-image-wrapper"><LandingText/></div>
     }
     
 }

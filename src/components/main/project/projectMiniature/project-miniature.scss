@@ -3,17 +3,18 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    height: 50%;
+    width: 30%;
+    height: 30%;
     margin: auto;
     transition: all 1s ease-in-out;
     padding: 3% 0 3% 0;
         
         .img-primary {
-            min-width: 100%;
+            // min-width: 50%;
         }
 
         .btn {
-            background-color: #29335c;
+            background-color: black;
             border: none;
             color: white;
             padding: 15px 32px;

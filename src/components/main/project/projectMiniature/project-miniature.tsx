@@ -16,10 +16,19 @@ export interface ProjectMiniatureProps{
     otherImages: Array<string>;
     zIndex: string;
     title: string;
+    isVertical: boolean;
 }
 
-export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex, opacityForAllImages, setOpacityForAllImages, otherImages, zIndex, title} : ProjectMiniatureProps) => {
-    const [style, setStyle] = useState(constants.lowSizePercent)
+export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveIndex,
+     opacityForAllImages, setOpacityForAllImages, otherImages, zIndex, title, isVertical} : ProjectMiniatureProps) => {
+    const getPercentage = (num: number): string => {
+        if(isVertical){
+            num = num/2;
+        }
+        return `${num}%`
+    }
+    
+    const [height, setHeight] = useState(getPercentage(constants.lowSizePercent));
     const [isImgLoaded, setIsImgLoaded] = useState(false);
     const [img, setImg] = useState("");
     const [otherImagesLoaded, setOtherImagesLoaded] = useState<Array<string>>([]);
@@ -27,12 +36,12 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
     
     const handleClick = () => {
         if(activeIndex === index){
-            setStyle(constants.lowSizePercent);
+            setHeight(getPercentage(constants.lowSizePercent));
             setActiveIndex(-1);
             setOpacityForAllImages(constants.fullOpacity);
         } else if(activeIndex < 0){
             setActiveIndex(index);
-            setStyle(constants.fullSizePercent);
+            setHeight(getPercentage(constants.fullSizePercent));
             setOpacityForAllImages(constants.lowOpacity);
         }
     }
@@ -85,7 +94,7 @@ export const ProjectMiniature = ({index, primaryImage, activeIndex, setActiveInd
     {
         return (
             <div className={'miniature-image-container'}
-                style={{width: style, height: style}}
+                style={{width: height, height: height}}
                 >
                     {activeIndex === index ? <NextButton content='previous' onClick={previousImage}/> : <div/>}
                         <Image 

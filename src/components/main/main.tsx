@@ -20,25 +20,27 @@ export const Main = ({imgZIndex} : MainProps) => {
             <div style={{display: "flex", flexDirection: "column"}}>
                     <ProjectMiniature 
                         index={1} 
-                        primaryImage={"prince.jpg"} 
+                        primaryImage={"fuzz/1.jpg"} 
                         activeIndex={activeMiniature} 
                         setActiveIndex={setActiveMiniature} 
                         opacityForAllImages={opacityForAllImages} 
                         setOpacityForAllImages={setOpacityForAllImages}
-                        otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
+                        otherImages={["fuzz/2.jpg", "fuzz/3.jpg", "fuzz/4.jpg", "fuzz/5.jpg", "fuzz/6.jpg"]}
                         zIndex={imgZIndex}
-                        title={"project 1"}
+                        title={"F U Z Z"}
+                        isVertical={false}
                         />
                     <ProjectMiniature 
                         index={2} 
-                        primaryImage={"prince.jpg"} 
+                        primaryImage={"bnw/1.jpg"} 
                         activeIndex={activeMiniature} 
                         setActiveIndex={setActiveMiniature} 
                         opacityForAllImages={opacityForAllImages} 
                         setOpacityForAllImages={setOpacityForAllImages}
-                        otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
+                        otherImages={["bnw/2.jpg", "bnw/3.jpg", "bnw/4.jpg"]}
                         zIndex={imgZIndex}
-                        title={"project 2"}
+                        title={"B N W"}
+                        isVertical={true}
                         />
                     <ProjectMiniature 
                         index={3} 
@@ -50,6 +52,7 @@ export const Main = ({imgZIndex} : MainProps) => {
                         otherImages={["golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg", "golden.jpg", "prince.jpg"]}
                         zIndex={imgZIndex}
                         title={"project 3"}
+                        isVertical={false}
                         />
             </div>
     </motion.div>)
